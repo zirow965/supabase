@@ -406,7 +406,7 @@ services:
 
   vector:
     container_name: supabase-vector
-    image: timberio/vector:0.28.1-alpine
+    image: timberio/vector:0.38.0-alpine
     healthcheck:
       test:
         [
@@ -416,7 +416,7 @@ services:
           "--no-verbose",
           "--tries=1",
           "--spider",
-          "http://vector:9001/health"
+          "http://localhost:8686/health"
         ]
       timeout: 5s
       interval: 5s
