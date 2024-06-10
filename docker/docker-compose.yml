@@ -406,7 +406,7 @@ services:
 
   vector:
     container_name: supabase-vector
-    image: timberio/vector:0.38.0-alpine
+    image: timberio/vector:0.38.0-debian
     healthcheck:
       test:
         [
