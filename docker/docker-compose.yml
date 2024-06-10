@@ -421,9 +421,6 @@ services:
       timeout: 5s
       interval: 5s
       retries: 3
-    depends_on:
-      analytics:
-        condition: service_healthy
     volumes:
       - ./volumes/logs/vector.yml:/etc/vector/vector.yml:ro
       - ${DOCKER_SOCKET_LOCATION}:/var/run/docker.sock:ro
