@@ -416,11 +416,14 @@ services:
           "--no-verbose",
           "--tries=1",
           "--spider",
-          "http://vector:9001/health"
+          "http://localhost:8686/health"
         ]
       timeout: 5s
       interval: 5s
       retries: 3
+      depends_on:
+        analytics:
+          condition: service_healthy
     volumes:
       - ./volumes/logs/vector.yml:/etc/vector/vector.yml:ro
       - ${DOCKER_SOCKET_LOCATION}:/var/run/docker.sock:ro
